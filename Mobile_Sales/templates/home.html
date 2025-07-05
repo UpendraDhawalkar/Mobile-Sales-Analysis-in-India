@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<section id="profile">
+  <div class="slider-container">
+    <div class="slides">
+      <div class="slide">
+        <img src="static/assets/report.png" alt="Slide 1">
+        <a href="https://www.apple.com/in/iphone/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/stat.webp" alt="Slide 2">
+        <a href="https://www.samsung.com/in/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/1.jpg" alt="Slide 1">
+        <a href="https://www.apple.com/in/iphone/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/2.jpg" alt="Slide 2">
+        <a href="https://www.samsung.com/in/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/3.jpg" alt="Slide 3">
+        <a href="https://www.realme.com/in/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/4.jpg" alt="Slide 4">
+        <a href="https://www.motorola.in/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/5.jpg" alt="Slide 5">
+        <a href="https://www.mi.com/in/store/" class="buy-now" target="_blank">Website</a>
+      </div>
+      <div class="slide">
+        <img src="static/assets/6.jpg" alt="Slide 6">
+        <a href="https://www.vivo.com/en" class="buy-now" target="_blank">Website</a>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+{% if user.is_authenticated %}
+<section id="about">
+  <h1 class="title">Latest Mobile</h1>
+  <div class="main-container">
+    <div class="brand-list">
+      <h2>Mobile Brands</h2>
+      <div class="brand-item" data-company="apple">
+        <img src="https://cdn-icons-png.flaticon.com/512/0/747.png" alt="Apple" class="brand-icon">
+        <span class="brand-name">Apple</span>
+      </div>
+      <div class="brand-item" data-company="samsung">
+        <img src="static/assets/sam_logo.avif" alt="Samsung" class="brand-icon">
+        <span class="brand-name">Samsung</span>
+      </div>
+      <div class="brand-item" data-company="realme">
+        <img src="static/assets/Realme_logo.png" alt="Realme" class="brand-icon">
+        <span class="brand-name">Realme</span>
+      </div>
+      <div class="brand-item" data-company="redmi">
+        <img src="static/assets/redmi_logo.png" alt="Redmi" class="brand-icon">
+        <span class="brand-name">Redmi</span>
+      </div>
+      <div class="brand-item" data-company="motorola">
+        <img src="static/assets/moto_logo.png" alt="Motorola" class="brand-icon">
+        <span class="brand-name">Motorola</span>
+      </div>
+      <div class="brand-item" data-company="vivo">
+        <img src="static/assets/vivo_logo.png" alt="Vivo" class="brand-icon">
+        <span class="brand-name">Vivo</span>
+      </div>
+    </div>
+
+    <div class="product-display">
+      <div id="empty-state" class="empty-state">
+        Please select a mobile brand to view their latest models
+      </div>
+
+      <div id="product-viewer" style="display: none; height: 100%;">
+        <h2 id="brand-title">Latest Models</h2>
+        <div class="viewer-container">
+          <button class="nav-prev">&#10094;</button>
+          <button class="nav-next">&#10095;</button>
+
+          <div class="product-carousel">
+            <!-- Items will be inserted here by JavaScript -->
+          </div>
+
+          <div class="carousel-indicators">
+            <!-- Dots will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <div class="container">
+    <h1 class="sub-title" style="margin-top: -70px;">OFFERS</h1>
+    <div class="services-list">
+      <div>
+        <img src="static/assets/15pro_max.jpg" alt="iPhone 15 Pro Max">
+        <h3>iPhone 15 Pro Max</h3>
+        <p><s>₹1,49,900</s> <strong>₹1,39,000</strong></p>
+        <p>Shop: iStore</p>
+        <p>Address: A1 Street, Mumbai</p>
+      </div>
+
+      <div>
+        <img src="static/assets/s23_ultra.jpg" alt="Samsung S23 Ultra">
+        <h3>Samsung S23 Ultra</h3>
+        <p><s>₹1,24,999</s> <strong>₹1,10,000</strong></p>
+        <p>Shop: Samsung Plaza</p>
+        <p>Address: MG Road, Bengaluru</p>
+      </div>
+
+      <div>
+        <img src="static/assets/one12.jpg" alt="OnePlus 12">
+        <h3>OnePlus 12</h3>
+        <p><s>₹69,999</s> <strong>₹62,000</strong></p>
+        <p>Shop: OnePlus Experience Store</p>
+        <p>Address: Park Street, Kolkata</p>
+      </div>
+
+      <div>
+        <img src="static/assets/g8.jpg" alt="Google Pixel 8">
+        <h3>Google Pixel 8</h3>
+        <p><s>₹75,999</s> <strong>₹68,500</strong></p>
+        <p>Shop: Pixel Hub</p>
+        <p>Address: Banjara Hills, Hyderabad</p>
+      </div>
+
+      <div>
+        <img src="static/assets/one_ce4.jpg" alt="OnePlus Nord CE 4">
+        <h3>OnePlus Nord CE 4</h3>
+        <p><s>₹27,999</s> <strong>₹24,499</strong></p>
+        <p>Shop: Gadget World</p>
+        <p>Address: Sector 22, Chandigarh</p>
+      </div>
+
+      <div>
+        <img src="static/assets/red13.jpg" alt="Redmi Note 13 Pro">
+        <h3>Redmi Note 13 Pro</h3>
+        <p><s>₹22,999</s> <strong>₹19,999</strong></p>
+        <p>Shop: Mi Store</p>
+        <p>Address: Civil Lines, Nagpur</p>
+      </div>
+    </div>
+
+    <div class="services-list" id="extraRow">
+      <div>
+        <img src="static/assets/v30.jpg" alt="Vivo V30 Pro">
+        <h3>Vivo V30 Pro</h3>
+        <p><s>₹41,999</s> <strong>₹38,999</strong></p>
+        <p>Shop: Vivo Smart Hub</p>
+        <p>Address: Lalbagh, Lucknow</p>
+      </div>
+
+      <div>
+        <img src="static/assets/r_pro+.jpg" alt="Realme 12 Pro+">
+        <h3>Realme 12 Pro+</h3>
+        <p><s>₹32,999</s> <strong>₹29,500</strong></p>
+        <p>Shop: Realme World</p>
+        <p>Address: Koregaon Park, Pune</p>
+      </div>
+
+      <div>
+        <img src="static/assets/r_narzo.jpg" alt="Realme Narzo 60x">
+        <h3>Realme Narzo 60x</h3>
+        <p><s>₹14,999</s> <strong>₹12,999</strong></p>
+        <p>Shop: Digital Zone</p>
+        <p>Address: Ashok Nagar, Ranchi</p>
+      </div>
+    </div>
+
+
+  </div>
+  <button class="toggle-btn2" id="toggleBtn" onclick="toggleMore()">More</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<section id="projects">
+
+  <h1 class="title">Projects</h1>
+
+
+  <!-- <div id="reportContainer" style="height:500px;width:1000px;">
+      <iframe title="Mobile Sales Dashboard" width="1000" height="500" src="https://app.powerbi.com/reportEmbed?reportId=94b60ba5-91af-4821-9019-85bb729271b8&autoAuth=true&embeddedDemo=true" frameborder="0" allowFullScreen="true"></iframe> 
+      
+  </iframe>
+    </div> -->
+  <div id="reportContainer">
+    <img src="static/assets/dashboard.png" alt="Project Dashboard" style="height:500px;width:1000px;">
+  </div>
+
+  <div style="margin-top: 15px;">
+    <button
+      onclick="window.open('https://app.powerbi.com/reportEmbed?reportId=94b60ba5-91af-4821-9019-85bb729271b8&autoAuth=true&embeddedDemo=true', '_blank')"
+      >
+      Open in Web
+    </button>
+  </div>
+
+</section>
+<section id="contact">
+
+  <h1 class="title">Contact Us</h1>
+  <div class="contact-info-upper-container">
+    <div class="contact-info-container">
+      <img src="static/assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+      <p><a href="mailto:examplemail@gmail.com">upendradhawalkar18@gmail.com</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img src="static/assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+      <p><a href="https://www.linkedin.com/in/upendradhawalkar">LinkedIn</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img src="static/assets/mobile2.png" alt="Mobile icon" class="icon contact-icon" />
+      <p style="color: aliceblue;">+918435388265</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<footer>
+  <nav>
+    <div class="nav-links-container">
+      <ul class="nav-links">
+        <li><a href="#about">Latest</a></li>
+        <li><a href="#services">Offers</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <p>Copyright &#169; 2025 Upendra. All Rights Reserved.</p>
+</footer>
+<script>
+  function toggleMore() {
+    const extraRow = document.getElementById('extraRow');
+    const btn = document.getElementById('toggleBtn');
+
+    extraRow.classList.toggle('show');
+    btn.textContent = extraRow.classList.contains('show') ? 'Read Less' : 'More';
+  }
+
+  var embedConfiguration = {
+    type: 'report',
+    tokenType: models.TokenType.Aad,  // Requires user to log in
+    accessToken: '', // Leave blank to trigger sign-in
+    embedUrl: 'https://app.powerbi.com/reportEmbed?reportId=94b60ba5-91af-4821-9019-85bb729271b8',
+    id: '94b60ba5-91af-4821-9019-85bb729271b8',
+    permissions: models.Permissions.All,
+    settings: {
+      panes: {
+        filters: { visible: true },
+        pageNavigation: { visible: true }
+      }
+    }
+  };
+
+  var reportContainer = document.getElementById('reportContainer');
+  var report = powerbi.embed(reportContainer, embedConfiguration);
+</script>
+{% endblock %}
